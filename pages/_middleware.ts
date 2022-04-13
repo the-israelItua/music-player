@@ -7,7 +7,7 @@ export default function middleware(req) {
     const token = req.cookies.MUSIX_ACCESS_TOKEN;
 
     if (!token) {
-      return NextResponse.redirect("/signin");
+      return NextResponse.redirect("/signin" );
     }
   }
 }

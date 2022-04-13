@@ -52,7 +52,6 @@ const musicMenu = [
 
 const Sidebar = () => {
   const { playlists } = usePlaylist();
-  console.log(playlists);
   return (
     <Box width="100%" height="calc(100vh - 100px)" paddingX="5px" color="gray">
       <Box padding="20px" height="60vh">
@@ -108,7 +107,13 @@ const Sidebar = () => {
             {playlists.map((item) => (
               <ListItem paddingX="20px" key={item.name}>
                 <LinkBox>
-                  <NextLink href="/" passHref>
+                  <NextLink
+                    href={{
+                      pathname: "/playlists/[id]",
+                      query: { id: item.id },
+                    }}
+                    passHref
+                  >
                     <LinkOverlay>{item.name}</LinkOverlay>
                   </NextLink>
                 </LinkBox>

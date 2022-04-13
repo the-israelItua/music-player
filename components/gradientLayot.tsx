@@ -1,7 +1,18 @@
 import { Box, Flex, Text } from "@chakra-ui/layout";
 import { Image } from "@chakra-ui/react";
+import { ReactNode } from "react";
 
-const GradientLayout = ({
+interface GradientLayout {
+  color: string;
+  children: ReactNode;
+  image: string;
+  subtitle: string;
+  title: string;
+  description: string;
+  roundImage?: boolean;
+}
+
+const GradientLayout: React.FC<GradientLayout> = ({
   color,
   children,
   image,
